@@ -67,11 +67,6 @@
                     <div>
                         <img src="@/assets/image.jpg" alt="">
                     </div>
-                    <div :class="$style.popup_container" v-if="isPopupVisible">
-                        <img @click="hidePopup" src="@/assets/img_1.svg" alt="">
-                        <img src="@/assets/img_2.jpg" alt="">
-                        <img src="@/assets/img_3.svg" alt="">
-                    </div>
                 </div>
                
             </div>
@@ -86,6 +81,10 @@
             </div>
             <div>
                 <img src="@/assets/icon_four.svg" alt="">
+            </div>
+            <div :class="$style.popup_container" v-if="isPopupVisible">
+                <img @click="hidePopup" src="@/assets/img_1.svg" alt="">
+                <img src="@/assets/img_2.jpg" alt="">
             </div>
         </div>
     </div>
@@ -133,6 +132,7 @@ export default {
 
     .popup_container > :nth-child(2) {
         margin-bottom: 3px;
+        border-bottom: 4px solid #476cfa;
     }
 
 
@@ -151,24 +151,8 @@ export default {
     z-index: 1000;
     }
 
-
-   .chat {
-    padding: 24px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    position: relative;
-   }
-
    img {
     cursor: pointer;
-   }
-
-   .header {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #f2f3f5;
-    padding-bottom: 12px;
-    align-items: center;
    }
 
    .header > :first-child {
@@ -219,9 +203,7 @@ export default {
     border-bottom: 1px solid #f2f3f5;
    }
 
-   .bottom {
-    position: relative;
-   }
+  
 
    .right {
     display: flex;
@@ -260,18 +242,39 @@ export default {
     color: #a2adc4;
    }
 
+   .chat {
+    padding: 24px 24px 0 24px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+   }
+
+   .header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #f2f3f5;
+    padding-bottom: 8px;
+    align-items: center;
+    max-height: 60px;
+   }
+
    .bottom_container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid #f2f3f5;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    padding: 15px 24px;
+    padding: 15px 0;
     background-color: #fff;
+    max-height: 60px;
    }
+
+
+   .chat_two {
+    overflow-y: auto;
+    max-height: calc(100vh - 216px); 
+}
 
    .bottom_container > :first-child {
     display: flex;
@@ -294,10 +297,6 @@ export default {
     color: #a2adc4;
    }
 
-   .chat_two {
-    overflow-y: auto; 
-    height: 72vh;
-    }
 
 
     .chat_two::-webkit-scrollbar {
@@ -311,14 +310,18 @@ export default {
     border-radius: 8px;
    }
 
+   .header {
+        background-color: #fff;
+        padding: 18px 0;
+        z-index: 999;
+        height: 55px;
+    }
+
    .bottom_container {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    padding: 18px;
+    padding: 18px 0;
     z-index: 999;
     background-color: #fff;
+    height: 60px;
    }
 
    .popup_container {
@@ -326,8 +329,7 @@ export default {
     }
 
    .chat_two {
-    max-height: 100vh!important;
-    padding: 60px 0 90px 0;
+    height: calc(100vh - 115px);
 
    }
 
@@ -335,15 +337,7 @@ export default {
         display: block;
     }
 
-    .header {
-        position: fixed;
-        background-color: #fff;
-        top: 0;
-        left: 0;
-        right: 0;
-        padding: 18px;
-        z-index: 999;
-    }
+    
 }
    
 </style>
