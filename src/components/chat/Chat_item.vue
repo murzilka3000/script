@@ -43,6 +43,7 @@ const props = defineProps({
     justify-content: space-between;
     padding: 12px 0;
     border-bottom: 1px solid #f2f3f5;
+    cursor: pointer;
 }
 
 .user_left,
