@@ -85,6 +85,9 @@
             <div :class="$style.popup_container" v-if="isPopupVisible">
                 <img @click="hidePopup" src="@/assets/img_1.svg" alt="">
                 <img src="@/assets/img_2.jpg" alt="">
+                <div>
+                    <hr>
+                </div>
             </div>
         </div>
     </div>
@@ -132,7 +135,19 @@ export default {
 
     .popup_container > :nth-child(2) {
         margin-bottom: 3px;
+    }
+
+    .popup_container > :nth-child(3) {
+        background-color: #F2F3F5;
+        border-radius: 10px;
+    }
+
+    .popup_container > :nth-child(3) hr {
         border-bottom: 4px solid #476cfa;
+        width: 80%;
+        padding: 0;
+        margin: 0;
+        border-radius: 10px;
     }
 
 
@@ -308,11 +323,12 @@ export default {
     padding: 0px;
     box-shadow: none;
     border-radius: 8px;
+    padding-top: 0;
    }
 
    .header {
         background-color: #fff;
-        padding: 18px 0;
+        padding: 16px 0;
         z-index: 999;
         height: 55px;
     }

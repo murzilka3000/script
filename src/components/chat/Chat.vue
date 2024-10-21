@@ -203,7 +203,7 @@ const chats = ref([
 
 @media screen and (max-width: 767px) {
     .chat {
-    padding: 44px 0 0 0;
+    padding: 16px 0 0 0;
     box-shadow: none;
 }
 
